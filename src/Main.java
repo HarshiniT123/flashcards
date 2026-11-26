@@ -21,7 +21,9 @@ public class Main {
             return;
         }
         for (String card : cards) {
-            out.println(card);
+            String[] parts = card.split("\\|");
+            out.println("Terms: " + parts[0].trim());
+            out.println("Definition: " + parts[1].trim());
         }
     }
 }
