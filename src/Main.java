@@ -24,7 +24,8 @@ public class Main {
         return cards;
     }
 
-    public static void quiz(ArrayList<String> cards, Scanner keyboard) {
+    public static ArrayList<String> quiz(ArrayList<String> cards, Scanner keyboard) {
+        ArrayList<String> missed = new ArrayList<>();
         int score = 0;
         for (String card : cards) {
             String[] parts = card.split("\\|");
@@ -36,9 +37,12 @@ public class Main {
             out.print("Did you get it right? (y/n): ");
             if (keyboard.nextLine().equals("y")) {
                 score++;
+            } else {
+                missed.add(card);
             }
         }
         out.println("Score: " + score + "/" + cards.size());
+        return missed;
     }
 
     public static void main(String[] args) {
@@ -48,6 +52,7 @@ public class Main {
             out.println("No cards found. Add lines like: term | definition");
             return;
         }
-        quiz(cards, keyboard);
+        ArrayList<String> missed = quiz(cards, keyboard);
+        out.println("You missed " + missed.size() + " terms.");
     }
 }
