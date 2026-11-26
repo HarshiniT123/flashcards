@@ -53,6 +53,11 @@ public class Main {
             return;
         }
         ArrayList<String> missed = quiz(cards, keyboard);
-        out.println("You missed " + missed.size() + " terms.");
+        if(missed.isEmpty()) {
+            out.println("Perfect, nothing to review!");
+        } else {
+            out.println("Re-quizzing " + missed.size() + " missed terms...");
+            quiz(missed, keyboard);
+        }
     }
 }
