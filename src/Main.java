@@ -6,32 +6,48 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        ArrayList<String> cards = new ArrayList<>();
-        Scanner keyboard = new Scanner(System.in);
-        try {
-            Scanner file = new Scanner(new File("terms.txt"));
-            while (file.hasNextLine()) {
-                cards.add(file.nextLine());
 
+    public static ArrayList<String> loadCards(String fileName) {
+        ArrayList<String> cards = new ArrayList<>();
+        try {
+            Scanner file = new Scanner(new File(fileName));
+            while (file.hasNextLine()) {
+                String line = file.nextLine();
+                if (line.contains("|")) {
+                    cards.add(line);
+                }
             }
             file.close();
-
         } catch (FileNotFoundException e) {
-            out.println("Could not find terms.txt");
+            out.println("Could not find " + fileName);
+        }
+        return cards;
+    }
+
+    public static void quiz(ArrayList<String> cards, Scanner keyboard) {
+        int score = 0;
+        for (String card : cards) {
+            String[] parts = card.split("\\|");
+            out.println();
+            out.println("Term: " + parts[0].trim());
+            out.print("Your answer: ");
+            keyboard.nextLine();
+            out.println("Definition: " + parts[1].trim());
+            out.print("Did you get it right? (y/n): ");
+            if (keyboard.nextLine().equals("y")) {
+                score++;
+            }
+        }
+        out.println("Score: " + score + "/" + cards.size());
+    }
+
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        ArrayList<String> cards = loadCards("terms.txt");
+        if (cards.isEmpty()) {
+            out.println("No cards found. Add lines like: term | definition");
             return;
         }
-        String[] parts = cards.get(0).split("\\|");
-        out.println("Term: " + parts[0].trim());
-        out.print("Your answer: ");
-        keyboard.nextLine();
-        out.println("Definition: " + parts[1].trim());
-        out.print("Did you get it right? (y/n): ");
-        if (keyboard.nextLine().equals("y")) {
-            out.println("Correct!");
-
-        } else {
-            out.println("Missed it.");
-        }
+        quiz(cards, keyboard);
     }
 }
