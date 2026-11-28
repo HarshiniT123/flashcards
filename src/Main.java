@@ -4,8 +4,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+/**
+ * A flashcard quiz that re-quizzes only the terms the user misses.
+ *
+ * @author Harshini Tammineedi
+ * @version November 2026
+ */
 
 public class Main {
+    /**
+     * Reads flashcards from a file into a list.
+     *
+     */
 
     public static ArrayList<String> loadCards(String fileName) {
         ArrayList<String> cards = new ArrayList<>();
@@ -23,6 +33,10 @@ public class Main {
         }
         return cards;
     }
+    /**
+     * Quizzes the user on every card once.
+     *
+     */
 
     public static ArrayList<String> quiz(ArrayList<String> cards, Scanner keyboard) {
         ArrayList<String> missed = new ArrayList<>();

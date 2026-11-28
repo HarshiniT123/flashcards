@@ -1,5 +1,20 @@
-Socialization | The lifelong process of learning the norms, values, and behaviors of a society
-Norm | A shared rule or expectation about how people should behave
-Deviance | Behavior that violates a society's norms
-Stratification | The ranking of people into layers based on wealth, power, and prestige
-Social Construct | An idea that exists because people agree it does
+Sociology | The scientific study of human society, social behavior, and social relationships
+Sociological imagination | The ability to see how personal experiences are connected to larger social forces and history
+Culture | The shared beliefs, values, norms, language, and material objects of a group of people
+Society | A group of people who live in a defined territory and share a culture
+Socialization | The lifelong process of learning the norms, values, and behaviors of one's society
+Norms | Shared rules and expectations about how people should behave in particular situations
+Values | Shared beliefs about what is good, right, and desirable in a society
+Folkways | Informal norms for everyday behavior that carry mild consequences when broken
+Mores | Strongly held norms that carry moral weight and serious consequences when violated
+Deviance | Behavior that violates the norms of a group or society
+Social structure | The patterned social arrangements in society that shape how people act
+Social stratification | The ranking of people into layers based on wealth, power, and prestige
+Social class | A group of people who share a similar economic position and lifestyle
+Status | A position a person holds in society, such as student, parent, or friend
+Role | The behaviors and obligations expected of a person who holds a particular status
+Social control | The methods a society uses to encourage conformity and discourage deviance
+Stereotype | An oversimplified and generalized belief about a group of people
+Prejudice | A negative attitude toward a group of people based on preconceived ideas
+Discrimination | Unequal treatment of people based on their group membership
+Functionalism | A theory that views society as a system of interdependent parts that work together for stability
